@@ -1,0 +1,20 @@
+<div class="cart-wrapper" *ngIf="cartItems.length > 0">
+  <div class="cart-item" *ngFor="let prodInCart of cartItems">
+    <div class="cart-product-info">
+      <span class="cart-product-name">{{ prodInCart.product }}</span><span class="cart-product-price"> - {{prodInCart.price}} ({{prodInCart.amount}})</span>
+    </div>
+    <div class="cart-product-action">
+      <button
+        class="remove-from-cart"
+        (click)="deleteProduct(prodInCart)"
+      >Remove from Cart</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="cartItems.length <= 0">
+  <div class="no-items">
+    <p>No item in the Cart</p>
+  </div>
+</div>
+

@@ -1,0 +1,13 @@
+<div class="product-wrapper">
+  <div class="product-item" *ngFor="let items of productList" >
+    <div class="product-info">
+      <span class="product-name">{{items.product}}</span><span class="product-price"> - {{items.price }}</span>
+    </div>
+    <div class="product-action">
+      <button
+        class="add-to-cart"
+        (click)="addProduct(items)"
+      >Add to Cart</button>
+    </div>
+  </div>
+</div>
